@@ -1,5 +1,7 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
+
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: any;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -11,11 +13,25 @@ const createWindow = (): void => {
   // Create the browser window.
   const mainWindow: BrowserWindow = new BrowserWindow({
     height: 768,
-    width: 1024,
+    width: 1280,
+    frame: false,
+    backgroundColor: "#F4F4FC",
+    webPreferences: {
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      enableRemoteModule: true,
+      nodeIntegration: true,
+    },
   });
+
+  // remove menus
+  Menu.setApplicationMenu(null);
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+  // open Devtools
+  mainWindow.webContents.openDevTools();
+  mainWindow.setMenuBarVisibility(false);
 };
 
 // This method will be called when Electron has finished

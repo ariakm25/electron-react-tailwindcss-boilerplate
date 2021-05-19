@@ -10,6 +10,19 @@ rules.push({
   ],
 });
 
+rules.push({
+  test: /\.jsx?$/,
+  exclude: /node_modules/,
+  use: [
+    {
+      loader: "babel-loader",
+      options: {
+        plugins: ["react-hot-loader/babel"],
+      },
+    },
+  ],
+});
+
 module.exports = {
   module: {
     rules,
