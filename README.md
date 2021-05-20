@@ -1,6 +1,9 @@
 <h3 align="center">Electron React Tailwindcss Boilerplate</h3>
 
 ---
+### Demo:
+
+![image](https://user-images.githubusercontent.com/45255650/118969763-a555dc80-b997-11eb-8ec7-99b159ab79f2.png)
 
 ## 📝 Table of Contents
 
