@@ -31,6 +31,8 @@ const createWindow = (): void => {
 
   // open Devtools
   mainWindow.webContents.openDevTools();
+
+  // set menus
   mainWindow.setMenuBarVisibility(false);
 };
 

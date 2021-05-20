@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader";
 
 import Routes from "./Routes";
@@ -13,13 +13,13 @@ console.log(
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         {Routes.map((entry, i) => (
           <Route {...entry} key={i} />
         ))}
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
