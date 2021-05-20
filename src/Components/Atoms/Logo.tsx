@@ -4,7 +4,7 @@ interface LogoProps extends React.HTMLAttributes<HTMLElement> {
   width?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ width, ...attributes }): JSX.Element => {
+const Logo: React.FC<LogoProps> = ({...attributes }): JSX.Element => {
   return <img src="assets/img/logo.png" alt="Logo" {...attributes} />;
 };
 
